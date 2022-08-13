@@ -16,7 +16,13 @@
       "id": 3,
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
-      "reminder": false
+      "reminder": true
+    },
+    {
+      "text": "Fuck Wife's Pussy",
+      "day": "May 21st at 7:30pm",
+      "reminder": true,
+      "id": 4
     }
   ]
 }
