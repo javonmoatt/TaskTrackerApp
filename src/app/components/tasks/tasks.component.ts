@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/services/task.service';
 import { TASKS } from 'src/app/mock-tasks';
 import { Task } from 'src/app/Task';
+import { faTheaterMasks } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tasks',
@@ -19,7 +20,12 @@ export class TasksComponent implements OnInit {
   }
   
   deleteTask(task:Task) {
-    this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter(t => t.id! !== task.id)));
+    this.taskService.deleteTask(task).subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id)));
+  }
+
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
   }
 
 }
